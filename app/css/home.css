@@ -449,11 +449,12 @@ body.blackWall .evChip { background: rgba(255, 255, 255, 0.05); }
 
 body.blackWall #dockBand { background: #141416; }
 
-:root { --tw: 360px; --th: 202px; --tr: 32px; }
+/* Kích thước ô: giá trị mặc định (4 cột); home.js ghi đè bằng <style id="tileGeo"> khi đổi số cột.
+   Không dùng CSS variables: Chromium 47 của Tizen 3.0 (TV 2017) không hiểu chúng và các ô sẽ co về 0×0. */
 
 .item {
   position: absolute;
-  width: var(--tw);
+  width: 360px;
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 400ms ease, transform 400ms cubic-bezier(0.2, 0.8, 0.3, 1),
@@ -481,9 +482,9 @@ body.editing #glass { opacity: 0 !important; }
 
 .card {
   position: relative;
-  width: var(--tw);
-  height: var(--th);
-  border-radius: var(--tr);
+  width: 360px;
+  height: 202px;
+  border-radius: 32px;
   overflow: hidden;
   background: #1c1c1e;
   transition: transform 180ms ease;
@@ -495,7 +496,7 @@ body.editing #glass { opacity: 0 !important; }
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: var(--tr);
+  border-radius: 32px;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
@@ -504,12 +505,12 @@ body.editing #glass { opacity: 0 !important; }
   transition: transform 220ms cubic-bezier(0.34, 1.4, 0.5, 1);
 }
 
-.card img, .card svg { position: absolute; top: 0; left: 0; width: var(--tw); height: var(--th); }
+.card img, .card svg { position: absolute; top: 0; left: 0; width: 360px; height: 202px; }
 
 /* No artwork: the app's initials on graphite. */
 .card .letter {
   position: absolute;
-  top: 0; left: 0; width: var(--tw); height: var(--th);
+  top: 0; left: 0; width: 360px; height: 202px;
   display: flex;
   align-items: center;
   justify-content: center;
